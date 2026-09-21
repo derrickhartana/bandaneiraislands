@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banda Neira, The Island the World Fought For</title>
+  <title>Banda Neira, a Beautiful Island the World Once Fought For</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -49,28 +49,13 @@
       }
     }
 
-  * {
-    -webkit-user-select: none;  
-    -moz-user-select: none;    
-    -ms-user-select: none;    
-    user-select: none;        
-  }
-
-  img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-    pointer-events: none; /* Optional: also blocks clicking on images */
-  }
-
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 72px;
     }
 
     body {
@@ -125,7 +110,6 @@
       }
     }
 
-
     img.img-fallback {
       display: flex;
       align-items: center;
@@ -140,7 +124,7 @@
       padding: 12px;
     }
 
-
+    /* ---------- NAV ---------- */
     nav {
       position: sticky;
       top: 0;
@@ -192,13 +176,13 @@
       border-color: var(--clay);
     }
 
-    @media (max-width:820px) {
+    @media (max-width:900px) {
       .navlinks {
         display: none;
       }
     }
 
-
+    /* ---------- HERO ---------- */
     .hero {
       position: relative;
       min-height: 92vh;
@@ -282,7 +266,7 @@
 
     .hero-meta .num {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: #FBF7EA;
     }
@@ -291,7 +275,7 @@
       font-size: 0.74rem;
       color: #CBBE99;
       margin-top: 2px;
-      max-width: 16ch;
+      max-width: 18ch;
     }
 
     .scroll-cue {
@@ -315,6 +299,12 @@
       animation: cue 2s ease-in-out infinite;
     }
 
+    @media (max-width:820px) {
+      .scroll-cue {
+        display: none;
+      }
+    }
+
     @keyframes cue {
 
       0%,
@@ -327,7 +317,7 @@
       }
     }
 
-
+    /* ---------- SHARED SECTION ---------- */
     section {
       position: relative;
       padding: 100px 0;
@@ -363,7 +353,7 @@
       padding-bottom: 6px;
     }
 
-
+    /* ---------- INTRO / ABOUT ---------- */
     .about {
       background: var(--bg);
     }
@@ -385,22 +375,14 @@
     .about-copy p {
       color: var(--ink-soft);
       font-size: 1.03rem;
-      margin-bottom: 17px;
     }
 
-    .about-copy p:first-child {
+    .about-copy p.lead {
       font-family: var(--serif);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: var(--ink);
-      line-height: 1.5;
+      line-height: 1.55;
       font-weight: 400;
-    }
-
-    .about-copy .cap {
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--sea);
-      font-size: 1.02rem;
     }
 
     .cove-figure {
@@ -415,53 +397,474 @@
       box-shadow: 0 30px 60px -20px var(--shadow);
     }
 
-    .cove-tag {
-      position: absolute;
-      left: -16px;
-      bottom: -16px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      padding: 16px 20px;
-      max-width: 220px;
-      box-shadow: 0 20px 40px -18px var(--shadow);
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 64px;
     }
 
-    .cove-tag .n {
+    @media (max-width:900px) {
+      .about-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:520px) {
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .point {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 22px 22px 24px;
+    }
+
+    .point .ic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--clay) 16%, transparent);
+      color: var(--clay);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .point .ic svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .point h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .point p {
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ---------- BEACH ---------- */
+    .beach {
+      background: var(--bg-2);
+    }
+
+    .beach-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    @media (max-width:860px) {
+      .beach-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    .beach-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 190px;
+      gap: 12px;
+    }
+
+    .beach-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .beach-media img:first-child {
+      grid-column: 1 / 3;
+      border-radius: 2px 2px 2px 90px;
+      box-shadow: 0 30px 60px -24px var(--shadow);
+    }
+
+    .beach-text .lead {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .quality-list {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 22px;
+    }
+
+    @media (max-width:520px) {
+      .quality-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quality-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .quality-list li svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      color: var(--sea);
+    }
+
+    .beach-text p.body {
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      margin-bottom: 14px;
+    }
+
+    .activity-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      font-size: 0.86rem;
+      color: var(--ink);
+    }
+
+    .chip svg {
+      width: 16px;
+      height: 16px;
       color: var(--clay);
     }
 
-    .cove-tag .t {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      margin-top: 2px;
+    /* ---------- COASTLINE ---------- */
+    .coast {
+      background: var(--bg);
     }
 
-
-    .island-diagram {
-      margin-top: 80px;
+    .coast-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .island-diagram svg {
+    @media (max-width:820px) {
+      .coast-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .coast-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .coast-card img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 230px;
+      object-fit: cover;
     }
 
-    .diagram-caption {
-      text-align: center;
-      font-size: 0.8rem;
+    .coast-card .in {
+      padding: 22px 24px 26px;
+    }
+
+    .coast-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .coast-card p {
+      font-size: 0.92rem;
       color: var(--ink-soft);
-      margin-top: 14px;
     }
 
+    .coast-banner {
+      margin-top: 36px;
+      background: var(--green-deep);
+      color: #F0EAD6;
+      border-radius: 4px;
+      padding: 38px 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 40px;
+      align-items: center;
+    }
 
+    @media (max-width:700px) {
+      .coast-banner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 26px 24px;
+      }
+    }
+
+    .coast-banner .equation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: #E9C878;
+      flex-wrap: wrap;
+    }
+
+    .coast-banner .equation span.op {
+      color: #9FA895;
+      font-size: 1.3rem;
+    }
+
+    .coast-banner .equation span.res {
+      color: #FBF7EA;
+      font-style: italic;
+    }
+
+    .coast-banner p {
+      color: #C9CDB9;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    /* ---------- VOLCANO ---------- */
+    .volcano {
+      background: var(--green-deep);
+      color: #F0EAD6;
+      overflow: hidden;
+    }
+
+    .volcano h2 {
+      color: #FBF7EA;
+    }
+
+    .volcano .section-head .tag {
+      color: var(--gold);
+    }
+
+    .volcano .section-head .desc {
+      color: #C9CDB9;
+    }
+
+    .volcano-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    @media (max-width:860px) {
+      .volcano-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    .volcano-photo img {
+      background: rgba(240, 234, 214, 0.08);
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 120px 2px 2px 2px;
+      box-shadow: 0 40px 70px -24px rgba(0, 0, 0, 0.55);
+    }
+
+    .volcano-copy .lead {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: #FBF7EA;
+      margin-bottom: 26px;
+    }
+
+    .feature-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .feature-stack .f {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(240, 234, 214, 0.18);
+    }
+
+    .feature-stack .f:last-child {
+      border-bottom: 1px solid rgba(240, 234, 214, 0.18);
+    }
+
+    .feature-stack .f .ic {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(233, 200, 120, 0.14);
+      color: #E9C878;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-stack .f .ic svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .feature-stack h4 {
+      color: #FBF7EA;
+      font-size: 1.05rem;
+      margin-bottom: 3px;
+    }
+
+    .feature-stack p {
+      color: #C9CDB9;
+      font-size: 0.92rem;
+    }
+
+    /* ---------- VEGETATION ---------- */
+    .veg {
+      background: var(--bg);
+    }
+
+    .veg-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    @media (max-width:860px) {
+      .veg-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    .veg-copy .lead {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .veg-copy p.body {
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      margin-bottom: 26px;
+    }
+
+    .palette-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .palette-strip div {
+      padding: 20px 14px 16px;
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 0.78rem;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .palette-strip b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .palette-strip .p1 {
+      background: #2F7A3A;
+    }
+
+    .palette-strip .p2 {
+      background: #2E6E8E;
+    }
+
+    .palette-strip .p3 {
+      background: #4C9BC4;
+    }
+
+    .veg-media {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 210px 210px;
+      gap: 12px;
+    }
+
+    .veg-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .veg-media img:first-child {
+      grid-row: 1 / 3;
+      border-radius: 2px 2px 90px 2px;
+      box-shadow: 0 30px 60px -24px var(--shadow);
+    }
+
+    /* ---------- PANORAMA ---------- */
     .panorama-sec {
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      padding: 70px 0 80px;
+      background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    }
+
+    .panorama-hero {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 30px 60px -24px var(--shadow);
+    }
+
+    .panorama-hero img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    @media (max-width:640px) {
+      .panorama-hero img {
+        height: 300px;
+      }
     }
 
     .panorama-quote-box {
@@ -535,681 +938,7 @@
       line-height: 1.55;
     }
 
-
-    .stats {
-      background: var(--green-deep);
-      color: #F0EAD6;
-      padding: 70px 0 80px;
-    }
-
-    .slider-header h2 {
-      font-family: var(--serif);
-      font-size: 2rem;
-      color: #FBF7EA;
-      margin-bottom: 12px;
-    }
-
-    .stats-sub {
-      color: #C9CDB9;
-      font-size: 1.02rem;
-      max-width: 62ch;
-      margin-bottom: 34px;
-    }
-
-    .interactive-slider-box {
-      background: rgba(12, 33, 29, 0.7);
-      border: 1px solid rgba(240, 234, 214, 0.18);
-      border-radius: 8px;
-      padding: 34px 32px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-    }
-
-    .slider-controls {
-      margin-bottom: 32px;
-    }
-
-    .slider-track-wrap {
-      position: relative;
-      padding: 6px 0;
-    }
-
-    #eraRange {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: rgba(240, 234, 214, 0.2);
-      outline: none;
-      cursor: pointer;
-    }
-
-    #eraRange::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #E9C878;
-      border: 3px solid #0F332C;
-      box-shadow: 0 0 12px rgba(233, 200, 120, 0.6);
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-
-    #eraRange::-webkit-slider-thumb:hover {
-      transform: scale(1.18);
-    }
-
-    #eraRange::-moz-range-thumb {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #E9C878;
-      border: 3px solid #0F332C;
-      box-shadow: 0 0 12px rgba(233, 200, 120, 0.6);
-      cursor: pointer;
-    }
-
-    .slider-ticks {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 14px;
-      padding: 0 2px;
-    }
-
-    .slider-ticks .tick {
-      background: none;
-      border: none;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: rgba(240, 234, 214, 0.6);
-      cursor: pointer;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s, transform 0.2s;
-    }
-
-    .slider-ticks .tick:hover,
-    .slider-ticks .tick.active {
-      color: #FBF7EA;
-      background: rgba(233, 200, 120, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .era-showcase {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 36px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(240, 234, 214, 0.12);
-      border-radius: 6px;
-      padding: 30px 28px;
-      align-items: center;
-    }
-
-    @media (max-width: 820px) {
-      .era-showcase {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .interactive-slider-box {
-        padding: 22px 16px;
-      }
-    }
-
-    .era-year {
-      font-family: var(--serif);
-      font-size: 3.4rem;
-      font-weight: 700;
-      line-height: 1;
-      color: #E9C878;
-      letter-spacing: -0.02em;
-    }
-
-    .era-badge {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 10px;
-      border-radius: 3px;
-      background: rgba(233, 200, 120, 0.18);
-      color: #E9C878;
-    }
-
-    .era-progress-bar {
-      height: 6px;
-      background: rgba(240, 234, 214, 0.15);
-      border-radius: 3px;
-      margin-top: 18px;
-      overflow: hidden;
-    }
-
-    .era-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #B85E33, #E9C878);
-      border-radius: 3px;
-      transition: width 0.3s ease;
-    }
-
-    .era-span {
-      font-size: 0.75rem;
-      color: #A3B0A7;
-      margin-top: 6px;
-    }
-
-    .era-right h3 {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      color: #FBF7EA;
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
-    .era-right p {
-      color: #D2DACF;
-      font-size: 0.96rem;
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-
-    .era-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      border-top: 1px solid rgba(240, 234, 214, 0.12);
-      padding-top: 16px;
-    }
-
-    @media (max-width: 600px) {
-      .era-metrics {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-    }
-
-    .era-metrics .metric {
-      background: rgba(0, 0, 0, 0.22);
-      padding: 10px 14px;
-      border-radius: 4px;
-      border: 1px solid rgba(240, 234, 214, 0.08);
-    }
-
-    .era-metrics .m-val {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #E9C878;
-    }
-
-    .era-metrics .m-lbl {
-      display: block;
-      font-size: 0.74rem;
-      color: #A3B0A7;
-      margin-top: 2px;
-    }
-
-
-
-    .gallery {
-      background: var(--bg-2);
-    }
-
-    .gallery-grid {
-      --row: 90px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: var(--row);
-      grid-auto-flow: dense;
-      gap: 12px;
-    }
-
-    .g-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-    }
-
-    .g-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s cubic-bezier(.2, .7, .3, 1);
-    }
-
-    .g-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .g-item .cap {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 16px 16px 12px;
-      background: linear-gradient(0deg, rgba(8, 14, 13, 0.88), transparent 80%);
-      color: #F3EEDD;
-      font-size: 0.78rem;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity .3s ease, transform .3s ease;
-    }
-
-    .g-item:hover .cap {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .g-item[data-slot="1"] {
-      grid-column: 1 / 4;
-      grid-row: 1 / 7;
-    }
-
-
-    .g-item[data-slot="2"] {
-      grid-column: 4 / 7;
-      grid-row: 1 / 4;
-    }
-
-
-    .g-item[data-slot="3"] {
-      grid-column: 4 / 6;
-      grid-row: 4 / 7;
-    }
-
-
-    .g-item[data-slot="4"] {
-      grid-column: 6 / 7;
-      grid-row: 4 / 7;
-    }
-
-
-
-
-    .g-item[data-slot="5"] {
-      grid-column: 1 / 3;
-      grid-row: 7 / 12;
-    }
-
-
-    .g-item[data-slot="6"] {
-      grid-column: 3 / 7;
-      grid-row: 7 / 10;
-    }
-
-
-    .g-item[data-slot="7"] {
-      grid-column: 3 / 5;
-      grid-row: 10 / 12;
-    }
-
-
-    .g-item[data-slot="8"] {
-      grid-column: 5 / 7;
-      grid-row: 10 / 12;
-    }
-
-
-
-    @media (max-width:780px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 140px;
-      }
-
-      .g-item {
-        grid-column: auto !important;
-        grid-row: span 2 !important;
-      }
-
-      .g-item[data-slot="1"],
-      .g-item[data-slot="6"] {
-        grid-column: span 2 !important;
-        grid-row: span 3 !important;
-      }
-    }
-
-
-    .history {
-      background: var(--bg);
-    }
-
-    .timeline-visual {
-      position: relative;
-      padding: 14px 0 10px;
-    }
-
-    .timeline-visual .spine {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 24px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--clay-deep), var(--gold));
-      opacity: 0.45;
-      border-radius: 2px;
-    }
-
-    .tl-track {
-      display: flex;
-      gap: 22px;
-      overflow-x: auto;
-      padding: 0 4px 28px;
-      scrollbar-width: thin;
-    }
-
-    .tl-item {
-      flex: 0 0 200px;
-      padding-top: 44px;
-      position: relative;
-      text-align: center;
-    }
-
-    .tl-item .dot {
-      position: absolute;
-      top: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      background: var(--clay);
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--gold);
-      margin: 0;
-      z-index: 1;
-    }
-
-    .tl-item .yr {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .tl-item .yr {
-        color: var(--gold);
-      }
-    }
-
-    .tl-item p {
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-      text-align: center;
-    }
-
-    .history-photo-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 56px;
-    }
-
-    @media (max-width:860px) {
-      .history-photo-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .history-photo-row figure {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-      height: 220px;
-    }
-
-    .history-photo-row img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .history-photo-row figcaption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 12px 14px;
-      background: linear-gradient(0deg, rgba(8, 14, 13, 0.85), transparent);
-      color: #F3EEDD;
-      font-size: 0.74rem;
-    }
-
-    .history-feature {
-      margin-top: 70px;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    @media (max-width:860px) {
-      .history-feature {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .history-feature img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 2px;
-      box-shadow: 0 30px 60px -20px var(--shadow);
-    }
-
-    .history-feature h3 {
-      font-size: 1.6rem;
-      margin-bottom: 15px;
-    }
-
-    .history-feature p {
-      color: var(--ink-soft);
-      margin-bottom: 13px;
-      font-size: 0.97rem;
-    }
-
-    .quote-block {
-      border-left: 2px solid var(--clay);
-      padding-left: 20px;
-      margin-top: 22px;
-    }
-
-    .quote-block p {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--ink);
-    }
-
-    .quote-block .src {
-      font-size: 0.76rem;
-      color: var(--ink-soft);
-      margin-top: 8px;
-      font-style: normal;
-    }
-
-
-    .nutmeg-panel {
-      background: var(--card);
-      border: 1px solid var(--line);
-      margin-top: 70px;
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-    }
-
-    @media (max-width:860px) {
-      .nutmeg-panel {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .nutmeg-panel img {
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      object-fit: cover;
-    }
-
-    .nutmeg-copy {
-      padding: 40px;
-    }
-
-    .nutmeg-copy h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    .nutmeg-copy .sub {
-      color: var(--ink-soft);
-      font-size: 0.88rem;
-      margin-bottom: 24px;
-    }
-
-    .nutmeg-diagram {
-      display: flex;
-      gap: 0;
-      margin-top: 8px;
-    }
-
-    .nutmeg-step {
-      flex: 1;
-      text-align: center;
-      padding: 0 10px;
-      position: relative;
-    }
-
-    .nutmeg-step:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      right: -4px;
-      top: 20px;
-      color: var(--clay);
-      font-size: 1.1rem;
-    }
-
-    .nutmeg-step .ic {
-      width: 38px;
-      height: 38px;
-      margin: 0 auto 10px;
-      color: var(--clay);
-    }
-
-    .nutmeg-step .t {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      line-height: 1.3;
-    }
-
-
-    .experience {
-      background: var(--bg-2);
-    }
-
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .exp-row {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 52px;
-      align-items: center;
-      padding: 48px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .exp-row:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .exp-row:nth-child(even) .exp-media {
-      order: 2;
-    }
-
-    @media (max-width:860px) {
-      .exp-row {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .exp-row:nth-child(even) .exp-media {
-        order: 0;
-      }
-    }
-
-    .exp-media {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .exp-media img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 2px;
-    }
-
-    .exp-media img:first-child {
-      grid-column: 1/-1;
-      height: 220px;
-    }
-
-    .exp-index {
-      font-family: var(--serif);
-      font-size: 0.92rem;
-      color: var(--clay);
-      margin-bottom: 13px;
-    }
-
-    .exp-text h3 {
-      font-size: 1.6rem;
-      margin-bottom: 13px;
-    }
-
-    .exp-text p {
-      color: var(--ink-soft);
-      font-size: 0.96rem;
-      margin-bottom: 11px;
-    }
-
-    .exp-text ul {
-      margin: 15px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .exp-text li {
-      display: flex;
-      gap: 10px;
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-      padding: 7px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .exp-text li:first-child {
-      border-top: none;
-    }
-
-    .exp-text li b {
-      color: var(--ink);
-      font-weight: 500;
-      min-width: 106px;
-    }
-
-
+    /* ---------- MAP (kept verbatim from original) ---------- */
     .mapsec {
       background: var(--bg);
     }
@@ -1396,98 +1125,7 @@
       background: var(--card);
     }
 
-
-    .culture {
-      background: var(--green-deep);
-      color: #F0EAD6;
-      overflow: hidden;
-    }
-
-    .culture-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    @media (max-width:860px) {
-      .culture-grid {
-        grid-template-columns: 1fr;
-        gap: 34px;
-      }
-    }
-
-    .culture h2 {
-      color: #FBF7EA;
-    }
-
-    .culture p {
-      color: #C9CDB9;
-      font-size: 0.98rem;
-      margin-top: 17px;
-      max-width: 44ch;
-    }
-
-    .culture-photos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .culture-photos img {
-      height: 190px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 2px;
-    }
-
-    .culture-photos .full {
-      grid-column: span 2;
-      height: 210px;
-    }
-
-
-    .plan {
-      background: var(--bg-2);
-    }
-
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .plan-card {
-      background: var(--card);
-      padding: 32px 28px;
-    }
-
-    .plan-card .ic {
-      width: 26px;
-      height: 26px;
-      color: var(--clay);
-      margin-bottom: 16px;
-    }
-
-    .plan-card h4 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .plan-card p {
-      font-size: 0.88rem;
-      color: var(--ink-soft);
-    }
-
-    @media (max-width:760px) {
-      .plan-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
+    /* ---------- FOOTER ---------- */
     footer {
       background: var(--green-deep);
       color: #C9CDB9;
@@ -1507,7 +1145,7 @@
       font-family: var(--serif);
       font-size: 1.25rem;
       color: #FBF7EA;
-      max-width: 320px;
+      max-width: 340px;
     }
 
     .foot-brand p {
@@ -1550,7 +1188,7 @@
       gap: 10px;
     }
 
-
+    /* ---------- MOTION / A11Y ---------- */
     .reveal {
       opacity: 0;
       transform: translateY(18px);
@@ -1582,10 +1220,6 @@
       .scroll-cue .line {
         animation: none;
       }
-
-      .g-item img {
-        transition: none;
-      }
     }
   </style>
 </head>
@@ -1602,19 +1236,20 @@
       </div>
       <div class="navlinks">
         <a href="#about">The Island</a>
+        <a href="#beach">The Beach</a>
+        <a href="#coast">Coastline</a>
+        <a href="#volcano">Gunung Api</a>
+        <a href="#vegetation">Vegetation</a>
         <a href="#panorama">Panorama</a>
-        <a href="#experience">Beaches & To Do</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#history">History</a>
         <a href="#map">Map</a>
-        <a href="#plan">Visit</a>
       </div>
     </div>
   </nav>
+
   <header class="hero">
     <div class="hero-media">
       <img src="https://live.staticflickr.com/65535/48257320322_31ae5d26d7_c.jpg"
-        alt="Sunset over the volcanic cone of Gunung Api, seen from Banda Neira" id="heroImg">
+        alt="Sunset over the cone-shaped volcano Gunung Api Banda, seen from Banda Neira" id="heroImg">
     </div>
     <div class="wrap hero-content">
       <div class="eyebrow-loc">
@@ -1622,126 +1257,364 @@
           <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.5" />
           <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.5" />
         </svg>
-        Banda Sea · Maluku · Indonesia · 4.53°S, 129.87°E
+        Maluku · Indonesia
       </div>
-      <h1>The island the world once fought for.</h1>
-      <p class="sub">A speck of volcanic rock in the Banda Sea, ringed by coral reefs and fragrant nutmeg groves, that
-        determined global spice trade routes for three centuries and now welcomes slow travel.</p>
+      <h1>A beautiful island the world once fought for.</h1>
+      <p class="sub">Famous for its stunning natural scenery, clear blue sea, and green hills. A peaceful and beautiful
+        place that attracts many visitors.</p>
       <div class="hero-meta">
         <div>
-          <div class="num">11</div>
-          <div class="lbl">islands in the Banda archipelago</div>
+          <div class="num">Clear blue sea</div>
+          <div class="lbl">calm, gentle waves</div>
         </div>
         <div>
-          <div class="num">1621</div>
-          <div class="lbl">year the VOC seized full control</div>
+          <div class="num">Green hills</div>
+          <div class="lbl">lush tropical vegetation</div>
         </div>
         <div>
-          <div class="num">640m</div>
-          <div class="lbl">Gunung Api volcano offshore</div>
+          <div class="num">Gunung Api Banda</div>
+          <div class="lbl">a cone-shaped volcano</div>
         </div>
         <div>
-          <div class="num">1</div>
-          <div class="lbl">place on earth nutmeg once grew</div>
+          <div class="num">Spice trade</div>
+          <div class="lbl">a rich history</div>
         </div>
       </div>
     </div>
     <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
   </header>
+
+  <!-- 1. INTRO -->
   <section id="about" class="about">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="tag">Where it sits</div>
-          <h2>A small crater ringed by paradise</h2>
+          <div class="tag">The Island</div>
+          <h2>Banda Neira, a peaceful and beautiful place</h2>
         </div>
-        <p class="desc">Banda Neira serves as the administrative heart of the Banda archipelago, rising out of one of
-          the deepest marine trenches in the Banda Sea roughly 140 kilometers south of Ambon.</p>
+        <p class="desc">An island in Maluku, Indonesia, that attracts many visitors.</p>
       </div>
 
       <div class="about-grid">
         <div class="about-copy reveal">
-          <p>Famous for stunning natural scenery, clear blue sea, and green hills, Banda Neira sits opposite the volcano
-            Gunung Api across a narrow strait, forming a sheltered harbour that merchant fleets have navigated for over
-            a thousand years.</p>
-          <p class="cap">22,000 residents across 11 islands, including fishers, nutmeg growers, and custodians of a
-            heritage that once rivaled gold.</p>
+          <p class="lead">Banda Neira is a beautiful island located in Maluku, Indonesia. It is famous for its stunning
+            natural scenery, clear blue sea, and green hills.</p>
+          <p style="margin-top:18px;">The island also has a rich history, especially because it was once an important
+            center of the spice trade. Visitors can enjoy the beautiful beaches, explore historical buildings, and see
+            the traditional life of local people.</p>
+          <p style="margin-top:18px;">Banda Neira is a peaceful and beautiful place that attracts many visitors.</p>
         </div>
         <div class="cove-figure reveal">
           <img src="https://live.staticflickr.com/65535/48193417456_ddbc0bab03_z.jpg"
             alt="Gunung Api Banda, cone-shaped volcano rising straight out of the blue sea">
-          <div class="cove-tag">
-            <div class="n">640m</div>
-            <div class="t">Gunung Api Banda is a cone-shaped volcano rising straight out of the blue sea, covered in
-              thick green forest with dark black paths of hardened lava.</div>
+        </div>
+      </div>
+
+      <div class="about-points reveal">
+        <div class="point">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <path d="M2 12c3-4 6-4 8 0s5 4 8 0 4-4 4-4" />
+              <path d="M2 18c3-4 6-4 8 0s5 4 8 0 4-4 4-4" />
+            </svg>
           </div>
+          <h4>Beautiful beaches</h4>
+          <p>Visitors can enjoy the beautiful beaches.</p>
         </div>
-      </div>
-      <div class="volcano-spotlight reveal"
-        style="margin-top: 50px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;">
-        <div
-          style="width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--clay) 18%, transparent); display: flex; align-items: center; justify-content: center; color: var(--clay); flex-shrink: 0;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3 9 18H3z" />
-            <path d="M10 12h4" />
-            <path d="M12 7v2" />
-          </svg>
+        <div class="point">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V8l7-5 7 5v13" />
+              <path d="M10 21v-6h4v6" />
+            </svg>
+          </div>
+          <h4>Historical buildings</h4>
+          <p>Explore historical buildings across the island.</p>
         </div>
-        <div>
-          <h3 style="font-size: 1.25rem; margin-bottom: 8px; color: var(--ink);">Gunung Api Banda, Sentinel of the Blue
-            Sea</h3>
-          <p style="color: var(--ink-soft); font-size: 0.98rem; line-height: 1.65;">
-            A cone-shaped active volcano rising 640 m straight from the sea, its steep green flanks scored by dark lava
-            paths from the 1988 eruption.
-          </p>
+        <div class="point">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <circle cx="9" cy="8" r="3" />
+              <circle cx="17" cy="10" r="2.4" />
+              <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1.3-4 3.5-4.4" />
+            </svg>
+          </div>
+          <h4>Traditional life</h4>
+          <p>See the traditional life of local people.</p>
         </div>
-      </div>
-      <div class="island-diagram reveal">
-        <svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="idTitle idDesc">
-          <title id="idTitle">Map diagram of the three central Banda Islands</title>
-          <desc id="idDesc">Gunung Api volcano, Banda Neira town, and Banda Besar arranged around a submerged caldera,
-            with distances labelled.</desc>
-          <circle cx="500" cy="150" r="120" fill="none" stroke="var(--clay)" stroke-width="1" stroke-dasharray="3 5"
-            opacity="0.35" />
-          <text x="500" y="40" text-anchor="middle" fill="var(--ink-soft)" font-family="Space Grotesk" font-size="12"
-            opacity="0.7">submerged caldera, ~7km diameter</text>
-          <polygon points="270,210 320,110 370,210" fill="var(--clay)" opacity="0.85" />
-          <circle cx="320" cy="108" r="4" fill="var(--gold)" />
-          <text x="320" y="235" text-anchor="middle" fill="var(--ink)" font-family="Fraunces" font-size="15"
-            font-weight="600">Gunung Api</text>
-          <text x="320" y="253" text-anchor="middle" fill="var(--ink-soft)" font-family="Space Grotesk"
-            font-size="11">640m volcano</text>
-          <line x1="378" y1="190" x2="440" y2="190" stroke="var(--sea)" stroke-width="1.5" stroke-dasharray="2 4" />
-          <text x="409" y="180" text-anchor="middle" fill="var(--sea)" font-family="Space Grotesk" font-size="10">~100m
-            strait</text>
-          <ellipse cx="500" cy="190" rx="55" ry="22" fill="var(--green)" opacity="0.85" />
-          <text x="500" y="235" text-anchor="middle" fill="var(--ink)" font-family="Fraunces" font-size="15"
-            font-weight="600">Banda Neira</text>
-          <text x="500" y="253" text-anchor="middle" fill="var(--ink-soft)" font-family="Space Grotesk"
-            font-size="11">main town, forts, airstrip</text>
-          <line x1="560" y1="190" x2="640" y2="190" stroke="var(--sea)" stroke-width="1.5" stroke-dasharray="2 4" />
-          <text x="600" y="180" text-anchor="middle" fill="var(--sea)" font-family="Space Grotesk"
-            font-size="10">~1.5km</text>
-          <ellipse cx="700" cy="185" rx="90" ry="30" fill="var(--gold)" opacity="0.7" />
-          <text x="700" y="235" text-anchor="middle" fill="var(--ink)" font-family="Fraunces" font-size="15"
-            font-weight="600">Banda Besar</text>
-          <text x="700" y="253" text-anchor="middle" fill="var(--ink-soft)" font-family="Space Grotesk"
-            font-size="11">Lonthoir, nutmeg groves</text>
-        </svg>
-        <p class="diagram-caption">Three islands inside one ancient caldera basin: Gunung Api, Banda Neira, and Banda
-          Besar form a natural ring in the Banda Sea.</p>
+        <div class="point">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 3c3 3 5 6 5 10a5 5 0 0 1-10 0c0-4 2-7 5-10Z" />
+              <path d="M12 21v-8" />
+            </svg>
+          </div>
+          <h4>Spice trade history</h4>
+          <p>Once an important center of the spice trade.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- 2. THE BEACH -->
+  <section id="beach" class="beach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">The Beach</div>
+          <h2>Beautiful, clean, and calm</h2>
+        </div>
+        <p class="desc">Many people visit this beach for its beauty.</p>
+      </div>
+
+      <div class="beach-grid">
+        <div class="beach-media reveal">
+          <img src="https://live.staticflickr.com/65535/48196461821_05ed4338e6_z.jpg"
+            alt="Small beach and sandy shore with calm gentle waves in Banda Neira">
+          <img src="https://live.staticflickr.com/65535/48200828807_a2151a79f2_z.jpg"
+            alt="Clear turquoise water meeting the shore in Banda Neira">
+          <img src="https://live.staticflickr.com/65535/48194074061_05e4ba44c5_z.jpg"
+            alt="Boat on clear blue water with green island mountains in the background">
+        </div>
+
+        <div class="beach-text reveal">
+          <p class="lead">The beach is beautiful and clean. The sea is blue and the water is clear.</p>
+
+          <ul class="quality-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M2 12c3-4 6-4 8 0s5 4 8 0 4-4 4-4" />
+              </svg>
+              The sea is blue
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11Z" />
+              </svg>
+              The water is clear
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M3 18c3-2 6-2 9 0s6 2 9 0" />
+                <path d="M3 13c3-2 6-2 9 0s6 2 9 0" />
+              </svg>
+              The sand is soft and clean
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M2 14c2.5-3 5-3 7.5 0s5 3 7.5 0" />
+                <path d="M2 9c2.5-3 5-3 7.5 0" />
+              </svg>
+              The waves are calm and gentle
+            </li>
+          </ul>
+
+          <p class="body">The sea view is peaceful and relaxing. The weather is sunny and warm, making the beach a
+            perfect place to swim, relax, and enjoy nature. Many people visit this beach for its beauty.</p>
+
+          <div class="activity-row">
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4" />
+              </svg>
+              Sunny and warm
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M2 16c2.5-3 5-3 7.5 0s5 3 7.5 0" />
+                <circle cx="17" cy="7" r="2" />
+                <path d="M8 13l4-4 3 2" />
+              </svg>
+              Swim
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M4 18h16M6 18c0-4 2.5-7 6-7s6 3 6 7" />
+                <path d="M12 4v4" />
+              </svg>
+              Relax
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 21V8M12 8c0-3 2-5 5-5 0 3-2 5-5 5ZM12 12c0-3-2-5-5-5 0 3 2 5 5 5Z" />
+              </svg>
+              Enjoy nature
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COASTLINE -->
+  <section id="coast" class="coast">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">The Coastline</div>
+          <h2>Where land and sea meet</h2>
+        </div>
+        <p class="desc">Clear water, small beaches, and sandy shores.</p>
+      </div>
+
+      <div class="coast-layout">
+        <div class="coast-card reveal">
+          <img src="https://live.staticflickr.com/65535/48196461821_05ed4338e6_z.jpg"
+            alt="Clear water along the Banda Neira coastline">
+          <div class="in">
+            <h3>Clear water</h3>
+            <p>Its coastline has clear water along the edge of the island.</p>
+          </div>
+        </div>
+        <div class="coast-card reveal">
+          <img src="https://live.staticflickr.com/65535/48200828807_a2151a79f2_z.jpg"
+            alt="A small beach on the Banda Neira coastline">
+          <div class="in">
+            <h3>Small beaches</h3>
+            <p>Small beaches are tucked along the shoreline.</p>
+          </div>
+        </div>
+        <div class="coast-card reveal">
+          <img src="https://live.staticflickr.com/65535/48194074061_05e4ba44c5_z.jpg"
+            alt="Sandy shores with the green island and mountains in the background">
+          <div class="in">
+            <h3>Sandy shores</h3>
+            <p>Sandy shores stretch beside the water.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coast-banner reveal">
+        <div class="equation">
+          <span>Land</span><span class="op">+</span><span>Sea</span><span class="op">=</span><span class="res">A
+            beautiful
+            coastal view</span>
+        </div>
+        <p>From the sea, visitors can see the green island and mountains in the background. The combination of land and
+          sea creates a beautiful coastal view that makes Banda Neira special.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GUNUNG API BANDA -->
+  <section id="volcano" class="volcano">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">Gunung Api Banda</div>
+          <h2>A cone-shaped volcano rising from the sea</h2>
+        </div>
+        <p class="desc">The giant green mountain creates a stunning view against the clear turquoise water.</p>
+      </div>
+
+      <div class="volcano-grid">
+        <div class="volcano-photo reveal">
+          <img src="https://live.staticflickr.com/65535/48193417456_ddbc0bab03_z.jpg"
+            alt="Gunung Api Banda, a cone-shaped volcano rising straight out of the blue sea">
+        </div>
+        <div class="volcano-copy reveal">
+          <p class="lead">Banda Neira features Gunung Api Banda, which is a beautiful, cone-shaped volcano that rises
+            straight out of the blue sea.</p>
+
+          <div class="feature-stack">
+            <div class="f">
+              <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                  <path d="m12 3 9 18H3z" />
+                </svg>
+              </div>
+              <div>
+                <h4>Steep sides</h4>
+                <p>The steep sides of the mountain are covered in thick, bright green tropical forest.</p>
+              </div>
+            </div>
+            <div class="f">
+              <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M5 3c4 3 3 7 7 9s3 6 7 9" />
+                  <path d="M3 9c3 2 2 5 5 7" />
+                </svg>
+              </div>
+              <div>
+                <h4>Old, hardened lava</h4>
+                <p>Dark black paths of old, hardened lava run from the mountain toward the town.</p>
+              </div>
+            </div>
+            <div class="f">
+              <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                  <path d="M2 14c2.5-3 5-3 7.5 0s5 3 7.5 0" />
+                  <path d="M2 19c2.5-3 5-3 7.5 0s5 3 7.5 0" />
+                  <path d="m12 3 5 8H7z" />
+                </svg>
+              </div>
+              <div>
+                <h4>A stunning view</h4>
+                <p>The giant green mountain creates a stunning view against the clear turquoise water.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VEGETATION -->
+  <section id="vegetation" class="veg">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">Tropical Vegetation</div>
+          <h2>Lush green all around the island</h2>
+        </div>
+        <p class="desc">Tall trees and dense plants create a fresh and natural view.</p>
+      </div>
+
+      <div class="veg-grid">
+        <div class="veg-copy reveal">
+          <p class="lead">Banda Neira is surrounded by lush tropical vegetation that adds a vibrant green color to the
+            landscape.</p>
+          <p class="body">Tall trees and dense plants grow across the island, creating a fresh and natural view. The
+            green vegetation blends beautifully with the blue sea and clear sky. From different parts of the island,
+            visitors can enjoy a scenic view filled with tropical greenery and natural beauty.</p>
+
+          <div class="palette-strip">
+            <div class="p1"><b>Green</b>Lush vegetation</div>
+            <div class="p2"><b>Blue</b>The sea</div>
+            <div class="p3"><b>Sky</b>Clear and bright</div>
+          </div>
+        </div>
+
+        <div class="veg-media reveal">
+          <img src="https://live.staticflickr.com/65535/48193417456_ddbc0bab03_z.jpg"
+            alt="Thick green tropical forest covering the steep sides of the mountain">
+          <img src="https://live.staticflickr.com/65535/48194074061_05e4ba44c5_z.jpg"
+            alt="Green island mountains blending with the blue sea">
+          <img src="https://live.staticflickr.com/65535/48196461821_05ed4338e6_z.jpg"
+            alt="Tropical greenery meeting the shoreline">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PANORAMA -->
   <section id="panorama" class="panorama-sec">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="tag">Breathtaking Panorama</div>
-          <h2>Where sea, volcano, and history converge</h2>
+          <div class="tag">The Panorama</div>
+          <h2>Sea, volcano, and history in one landscape</h2>
         </div>
-        <p class="desc">A cohesive landscape framed by deep cerulean waters, dramatic volcanic topography, and
-          star-shaped stone forts.</p>
+        <p class="desc">One of the most timeless and visually captivating vistas in Maluku.</p>
+      </div>
+
+      <div class="panorama-hero reveal">
+        <img src="https://live.staticflickr.com/65535/48257320322_31ae5d26d7_c.jpg"
+          alt="Panorama of the Banda Sea, Gunung Api Banda and the green islands">
       </div>
 
       <div class="panorama-quote-box reveal">
@@ -1763,469 +1636,34 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M2 12c3-4 6-4 8 0s5 4 8 0 4-4 4-4" />
               </svg>
-              Cerulean Waters
+              Cerulean waters
             </h4>
-            <p>Tranquil Banda Sea framing lush shores, calm gentle waves, and crystal clear water that reveals living
-              coral reefs metres out.</p>
+            <p>The tranquil Banda Sea frames the cluster of lush green islands.</p>
           </div>
           <div class="triad-card">
             <h4>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m12 3 8 16H4z" />
               </svg>
-              Volcanic Topography
+              Volcanic topography
             </h4>
-            <p>The symmetrical cone of Gunung Api Banda rising abruptly from the water, marked by thick tropical
-              rainforest and dark paths of hardened lava.</p>
+            <p>The perfectly symmetrical cone of Gunung Api Banda rises abruptly from the water, a dominant natural
+              sentinel across the narrow strait.</p>
           </div>
           <div class="triad-card">
             <h4>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 21h18M5 21V7l7-4 7 4v14" />
               </svg>
-              Historic Architecture
+              Historic architecture
             </h4>
-            <p>Star-shaped bastions of Fort Belgica, waterfront Fort Nassau, and centuries of colonial stone anchoring
-              human history to the terrain.</p>
+            <p>Landmarks like the star-shaped Fort Belgica anchor the human narrative to the rugged terrain.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="stats" id="timeline-slider">
-    <div class="wrap">
-      <div class="slider-header">
-        <div class="tag" style="color: var(--gold); margin-bottom: 8px;">Interactive Chronology</div>
-        <h2>Six Centuries of Global Trade on One Volcanic Island</h2>
-        <p class="stats-sub">Slide through time to discover how the world spice monopoly and natural events reshaped
-          Banda Neira from 1512 to the present day.</p>
-      </div>
 
-      <div class="interactive-slider-box reveal">
-        <div class="slider-controls">
-          <div class="slider-track-wrap">
-            <input type="range" id="eraRange" min="0" max="5" value="0" step="1" aria-label="Six Centuries Slider">
-            <div class="slider-ticks" id="sliderTicks">
-              <button class="tick active" data-idx="0">1512</button>
-              <button class="tick" data-idx="1">1609</button>
-              <button class="tick" data-idx="2">1621</button>
-              <button class="tick" data-idx="3">1667</button>
-              <button class="tick" data-idx="4">1936</button>
-              <button class="tick" data-idx="5">1988</button>
-            </div>
-          </div>
-        </div>
-        <div class="era-showcase" id="eraShowcase">
-          <div class="era-left">
-            <div class="era-year" id="eraYear">1512</div>
-            <div class="era-badge" id="eraBadge">First European Contact</div>
-            <div class="era-progress-bar">
-              <div class="era-fill" id="eraFill" style="width: 18%;"></div>
-            </div>
-            <div class="era-span" id="eraSpan">16th Century · Portuguese Expedition</div>
-          </div>
-          <div class="era-right">
-            <h3 id="eraTitle">Portuguese Navigators Arrive in Search of Nutmeg</h3>
-            <p id="eraDesc">Portuguese explorers led by Afonso de Albuquerque followed spice routes east and became the
-              first Europeans to anchor in Banda Neira, uncovering the ancient secret of nutmeg cultivation.</p>
-            <div class="era-metrics">
-              <div class="metric">
-                <span class="m-val" id="mVal1">100%</span>
-                <span class="m-lbl" id="mLbl1">Exclusive Spice Origin</span>
-              </div>
-              <div class="metric">
-                <span class="m-val" id="mVal2">1512</span>
-                <span class="m-lbl" id="mLbl2">First European Contact</span>
-              </div>
-              <div class="metric">
-                <span class="m-val" id="mVal3">Maluku</span>
-                <span class="m-lbl" id="mLbl3">Maritime Route</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="gallery" class="gallery">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="tag">In pictures</div>
-          <h2>Reef, ridge, ruin, and rooftop</h2>
-        </div>
-        <p class="desc">The island across four visual themes covering water, volcanic terrain, colonial history, and
-          daily life.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="g-item reveal" data-slot="1">
-          <img src="https://live.staticflickr.com/65535/48250814991_f392eb2fcf_b.jpg"
-            alt="Fort Belgica, the star-shaped 1611 Dutch fortress on Banda Neira">
-          <div class="cap">Fort Belgica, completed in 1611 as the largest surviving Dutch stone fortress in the East
-            Indies.</div>
-        </div>
-        <div class="g-item reveal" data-slot="2">
-          <img src="https://live.staticflickr.com/65535/48227906147_c5e971d387_z.jpg"
-            alt="Fort Nassau, the first Dutch fort on Banda Neira, built 1609">
-          <div class="cap">Fort Nassau, established in 1609 as the original waterfront fortification.</div>
-        </div>
-        <div class="g-item reveal" data-slot="3">
-          <img src="https://live.staticflickr.com/65535/48208793767_93f901534a_z.jpg"
-            alt="Nutmeg seed and its red mace aril, freshly split open">
-          <div class="cap">Nutmeg and its scarlet mace aril, still harvested by hand on Banda Besar.</div>
-        </div>
-        <div class="g-item reveal" data-slot="4">
-          <img src="https://live.staticflickr.com/65535/48226707612_d9678765c4_z.jpg"
-            alt="Istana Mini, the 1820s Dutch governor's residence on Banda Neira">
-          <div class="cap">Istana Mini, an 1820s governor's residence now preserved as a heritage museum.</div>
-        </div>
-        <div class="g-item reveal" data-slot="5">
-          <img src="https://live.staticflickr.com/65535/48194074061_05e4ba44c5_z.jpg"
-            alt="Traditional outrigger canoe on the water near Banda Neira">
-          <div class="cap">A traditional outrigger canoe on the calm strait between Neira and Gunung Api.</div>
-        </div>
-        <div class="g-item reveal" data-slot="6">
-          <img src="https://live.staticflickr.com/65535/48230987832_227774c8b8_z.jpg"
-            alt="Jalan Pelabuhan, the harbour road through Banda Neira town">
-          <div class="cap">Jalan Pelabuhan along the calm harbour promenade.</div>
-        </div>
-        <div class="g-item reveal" data-slot="7">
-          <img src="https://live.staticflickr.com/65535/48248765226_43be24e456_z.jpg"
-            alt="Gereja Tua Banda, an 1852 Dutch Protestant church">
-          <div class="cap">Gereja Tua Banda, an 1852 church paved with historic gravestones.</div>
-        </div>
-        <div class="g-item reveal" data-slot="8">
-          <img src="https://live.staticflickr.com/65535/48236532362_5bcb7462ee_z.jpg"
-            alt="Vendors and daily market life in Banda Neira town">
-          <div class="cap">Daily life and tropical produce along Banda Neira's morning market stalls.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="history" class="history">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="tag">A short, heavy history</div>
-          <h2>The spice that was worth more than gold</h2>
-        </div>
-        <p class="desc">Until 1851, nutmeg grew nowhere else on Earth. That single botanical fact drew merchant fleets
-          and royal navies from across the globe to this tiny volcanic archipelago.</p>
-      </div>
-
-      <div class="timeline-visual reveal">
-        <div class="spine"></div>
-        <div class="tl-track">
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">~200 BCE</div>
-            <p>Chinese and Arab traders move nutmeg along Indian Ocean routes long before Europe knows it exists.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1512</div>
-            <p>Portuguese navigators become the first Europeans to reach Banda Neira.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1609</div>
-            <p>Orang Kaya leaders resist Dutch monopoly demands. Fort Nassau is built.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1611</div>
-            <p>VOC completes Fort Belgica, a five-pointed star fortress commanding the bay.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1621</div>
-            <p>Governor-General Coen enforces full Dutch colonial control over the islands.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1667</div>
-            <p>Treaty of Breda: the Dutch swap Run Island for New Amsterdam (New York).</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1810</div>
-            <p>British forces briefly capture Fort Belgica during the Napoleonic Wars.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1851</div>
-            <p>Nutmeg transplanted to Mauritius and the Caribbean, ending the Banda monopoly.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1936</div>
-            <p>Independence leaders Hatta and Sjahrir exiled here, teaching local students.</p>
-          </div>
-          <div class="tl-item">
-            <div class="dot"></div>
-            <div class="yr">1988</div>
-            <p>Gunung Api erupts, creating lava reefs now ranked among the richest coral gardens in the region.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="history-photo-row reveal">
-        <figure>
-          <img src="https://live.staticflickr.com/65535/48253458801_b76e9d8a54_h.jpg"
-            alt="Inside the walls of Fort Belgica on Banda Neira">
-          <figcaption>Fort Belgica's inner courtyard</figcaption>
-        </figure>
-        <figure>
-          <img src="https://live.staticflickr.com/65535/48216003921_035904198b_z.jpg"
-            alt="Fort Hollandia ruins on Banda Besar island">
-          <figcaption>Fort Hollandia ruins, Banda Besar</figcaption>
-        </figure>
-        <figure>
-          <img src="https://live.staticflickr.com/65535/48225367537_bce6da6fd4_z.jpg"
-            alt="Masjid Tua At-Taqwa, a historic mosque near Banda Neira">
-          <figcaption>Masjid Tua At-Taqwa</figcaption>
-        </figure>
-        <figure>
-          <img src="https://live.staticflickr.com/65535/48200828807_a2151a79f2_z.jpg"
-            alt="The 1988 lava flow site on Gunung Api, now a dive spot">
-          <figcaption>The 1988 lava flow, now a dive site</figcaption>
-        </figure>
-      </div>
-
-      <div class="history-feature">
-        <img class="reveal" src="https://live.staticflickr.com/65535/48250814991_f392eb2fcf_b.jpg"
-          alt="Fort Belgica's star-shaped bastion walls overlooking the harbour">
-        <div class="reveal">
-          <h3>Fort Belgica, Standing Watch Across the Bay</h3>
-          <p>Built by the VOC in 1611 on commanding high ground above the harbour, Fort Belgica remains the most
-            impressive European fortress in the East Indies. Its five-pointed star of volcanic masonry was engineered to
-            observe every naval approach across the strait.</p>
-          <p>Its elevated ramparts, magazine chambers, and cannon bastions are remarkably preserved today. The panoramic
-            ascent rewards visitors with the finest view of Banda Neira, the sheltered bay, and Gunung Api rising across
-            the water.</p>
-          <div class="quote-block">
-            <p>Global powers competed for over seventy years to dominate these small volcanic islands, driven by the
-              fact that they remained the sole source of nutmeg on Earth.</p>
-            <div class="src">Documented across international maritime archives and local chronicles</div>
-          </div>
-        </div>
-      </div>
-      <div class="nutmeg-panel reveal">
-        <img src="https://live.staticflickr.com/65535/48208793767_93f901534a_z.jpg"
-          alt="Nutmeg fruit split open showing the seed and red mace aril">
-        <div class="nutmeg-copy">
-          <h3>One Fruit, Two Rare Spices</h3>
-          <p class="sub">Myristica fragrans is the only tree in the world yielding two separate culinary spices from a
-            single fruit, explaining why global merchant fleets voyaged across oceans to control its harvest.</p>
-          <div class="nutmeg-diagram">
-            <div class="nutmeg-step">
-              <svg class="ic" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.3" />
-              </svg>
-              <div class="t">Fruit ripens on the branch and splits naturally in the tropical sun</div>
-            </div>
-            <div class="nutmeg-step">
-              <svg class="ic" viewBox="0 0 24 24" fill="none">
-                <path d="M12 4c-4 2-4 8 0 16 4-8 4-14 0-16Z" stroke="currentColor" stroke-width="1.3" />
-              </svg>
-              <div class="t">Lacy scarlet mace aril peeled by hand and cured flat under sunlight</div>
-            </div>
-            <div class="nutmeg-step">
-              <svg class="ic" viewBox="0 0 24 24" fill="none">
-                <ellipse cx="12" cy="12" rx="6" ry="9" stroke="currentColor" stroke-width="1.3" />
-              </svg>
-              <div class="t">Nutmeg seed dried patiently over fragrant smoking wood embers</div>
-            </div>
-            <div class="nutmeg-step">
-              <svg class="ic" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
-              </svg>
-              <div class="t">Two distinct spices ready for global trade: fragrant mace and nutmeg</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="experience" class="experience">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="tag">What to do</div>
-          <h2>Beaches, ruins, and everyday island life</h2>
-        </div>
-        <p class="desc">Banda Neira rewards leisurely exploration, with most landmark sights situated within an easy
-          walk or brief boat crossing from the harbour.</p>
-      </div>
-
-      <div class="exp-list">
-        <div class="exp-row reveal" id="beaches">
-          <div class="exp-media">
-            <img src="https://live.staticflickr.com/65535/48200828807_a2151a79f2_z.jpg"
-              alt="Hardened black lava path from Gunung Api meeting the clear turquoise water">
-            <img src="https://live.staticflickr.com/65535/48196461821_05ed4338e6_z.jpg"
-              alt="Small beach and sandy shore with calm gentle waves in Banda Neira">
-            <img src="https://live.staticflickr.com/65535/48194074061_05e4ba44c5_z.jpg"
-              alt="Traditional boat on clear blue water with green island mountains in background">
-          </div>
-          <div class="exp-text">
-            <div class="exp-index">01 · Pristine Beaches and Coastline</div>
-            <h3>Soft sand, clear blue sea, and gentle waves</h3>
-            <p>The beach is beautiful and clean. The sea is blue and the water is clear. The sand is soft and clean. The
-              waves are calm and gentle. The sea view is peaceful and relaxing. The weather is sunny and warm, making
-              the beach a perfect place to swim, relax, and enjoy nature. Many people visit this beach for its beauty.
-            </p>
-            <div class="infographic-badges"
-              style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 16px;">
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--sea); font-weight: 600;">25m+</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Water
-                  Clarity</span>
-              </div>
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--green); font-weight: 600;">29°C</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Warm
-                  Sea</span>
-              </div>
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--clay); font-weight: 600;">Calm</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Gentle
-                  Waves</span>
-              </div>
-            </div>
-            <p style="margin-top: 10px;">Its coastline has clear water, small beaches, and sandy shores. From the sea,
-              visitors can see the green island and mountains in the background. The combination of land and sea creates
-              a beautiful coastal view that makes Banda Neira special.</p>
-            <ul>
-              <li><b>Best for</b> Swimming in calm gentle waves, relaxing under warm sunny skies, snorkelling over
-                shallow coral reefs</li>
-              <li><b>Coastal scenery</b> Small sandy shores, crystalline water, and dramatic volcanic peaks in the
-                backdrop</li>
-              <li><b>Best months</b> October to April, calmest sea conditions</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-row reveal">
-          <div class="exp-media">
-            <img src="https://live.staticflickr.com/65535/48227906147_c5e971d387_z.jpg"
-              alt="Fort Nassau, historic 1609 Dutch fort on the shoreline">
-            <img src="https://live.staticflickr.com/65535/48226707612_d9678765c4_z.jpg"
-              alt="Istana Mini, historic 1820s governor's residence">
-            <img src="https://live.staticflickr.com/65535/48240823857_e6108e7d90_z.jpg"
-              alt="Rumah Budaya cultural heritage museum in Banda Neira">
-          </div>
-          <div class="exp-text">
-            <div class="exp-index">02 · Historic Architecture</div>
-            <h3>Explore historical buildings and spice streets</h3>
-            <p>Visitors can explore historical buildings that testify to the island's rich past when it was an important
-              center of the world spice trade. Nestled along the shoreline, historic landmarks like the star-shaped Fort
-              Belgica anchor the human narrative to the rugged terrain, looking out over palm-fringed coastlines,
-              volcanic slopes, and scattered islets.</p>
-            <p style="margin-top: 14px;">Neira's peaceful streets feature preserved colonial merchant homes, the ruins
-              of Fort Nassau from 1609, the neoclassical governor's residence at Istana Mini, and the Rumah Budaya
-              museum, forming a memorable walking journey across centuries of island history.</p>
-            <ul>
-              <li><b>Key Landmarks</b> Star-shaped Fort Belgica, Fort Nassau, Istana Mini, old colonial town</li>
-              <li><b>Heritage Value</b> The epicenter of the three-century nutmeg monopoly</li>
-              <li><b>Getting there</b> Fully walkable within Banda Neira town</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-row reveal">
-          <div class="exp-media">
-            <img src="https://live.staticflickr.com/65535/48208793767_93f901534a_z.jpg"
-              alt="Freshly harvested nutmeg fruit revealing seed and red mace">
-            <img src="https://live.staticflickr.com/65535/48212649026_668805a1c5_z.jpg"
-              alt="Lush tropical vegetation and nutmeg groves of Lonthoir">
-            <img src="https://live.staticflickr.com/65535/48221795446_76864e107a_z.jpg"
-              alt="Dense green vegetation and tall trees overlooking the blue sea">
-          </div>
-          <div class="exp-text">
-            <div class="exp-index">03 · Tropical Greenery and Nutmeg Groves</div>
-            <h3>Lush tropical vegetation and vibrant green landscapes</h3>
-            <p>Banda Neira is surrounded by lush tropical vegetation that adds a vibrant green color to the landscape.
-              Tall trees and dense plants grow across the island, creating a fresh and natural view. The green
-              vegetation blends beautifully with the blue sea and clear sky. From different parts of the island,
-              visitors can enjoy a scenic view filled with tropical greenery and natural beauty.</p>
-            <div class="infographic-badges"
-              style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 16px;">
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--green); font-weight: 600;">100%</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Lush
-                  Canopy</span>
-              </div>
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--gold); font-weight: 600;">2x
-                  / yr</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Nutmeg
-                  Harvest</span>
-              </div>
-              <div
-                style="background: var(--bg-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; text-align: center;">
-                <span
-                  style="display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--clay); font-weight: 600;">15
-                  mins</span>
-                <span
-                  style="font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;">Boat
-                  Crossing</span>
-              </div>
-            </div>
-            <p style="margin-top: 10px;">A short boat ride across the strait to Banda Besar reaches working nutmeg
-              plantations shaded by towering kenari trees, where fragrant nutmeg and lacy red mace are still harvested
-              by hand just as they were centuries ago.</p>
-            <ul>
-              <li><b>Landscape</b> Vibrant tropical flora, green hills, and sweeping sea-canopy vistas</li>
-              <li><b>Spice Heritage</b> See where nutmeg grows under giant canopy trees</li>
-              <li><b>Getting there</b> 10 to 15 minute outrigger boat crossing to Banda Besar</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-row reveal">
-          <div class="exp-media">
-            <img src="https://live.staticflickr.com/65535/48236532362_5bcb7462ee_z.jpg"
-              alt="Traditional life of local people at the morning harbour market">
-            <img src="https://live.staticflickr.com/65535/48217086406_2a14c3bcc8_z.jpg"
-              alt="Women in traditional village life in Lonthoir, Banda Islands">
-            <img src="https://live.staticflickr.com/65535/48201910981_2416026ef3_z.jpg"
-              alt="Friendly children in village community, Banda Islands">
-          </div>
-          <div class="exp-text">
-            <div class="exp-index">04 · Traditional Life</div>
-            <h3>See the traditional life of local people</h3>
-            <p>Visitors can see the traditional life of local people in this peaceful and beautiful place that attracts
-              many visitors. Daily life moves at an authentic, peaceful pace: fishermen prepare traditional wooden
-              outriggers before sunrise, fresh nutmeg and spices dry on woven mats along cobblestone lanes, and morning
-              harbour markets open with friendly smiles.</p>
-            <ul>
-              <li><b>Authentic Encounters</b> Meeting welcoming locals, peaceful island rhythms, quiet market stalls
-              </li>
-              <li><b>Local Specialties</b> Handcrafted nutmeg jam, spiced tea, and freshly caught tuna</li>
-              <li><b>Best Time</b> Morning hours along the waterfront and village paths</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <section id="map" class="mapsec">
     <div class="wrap">
       <div class="section-head">
@@ -2265,128 +1703,32 @@
       </div>
     </div>
   </section>
-  <section id="culture" class="culture">
-    <div class="wrap">
-      <div class="culture-grid">
-        <div class="reveal">
-          <div class="tag" style="color:var(--gold)">Living culture</div>
-          <h2>A quiet, layered way of life</h2>
-          <p>Bandanese identity blends Malay, Arab, Dutch, Papuan, and Chinese heritage, reflecting centuries as a world
-            crossroads that welcomed merchant fleets from across oceans.</p>
-          <p>Village life on Lonthoir and Banda Besar still centres on nutmeg cultivation passed down through
-            generations, alongside traditional fishing and welcoming marine eco-tourism.</p>
-        </div>
-        <div class="culture-photos reveal">
-          <img src="https://live.staticflickr.com/65535/48212649026_668805a1c5_z.jpg"
-            alt="Residents of Lonthoir village on Banda Besar island">
-          <img src="https://live.staticflickr.com/65535/48237249342_e3d9cb8e55_z.jpg"
-            alt="The KM Pangrango ferry connecting Banda to Ambon">
-          <img class="full" src="https://live.staticflickr.com/65535/48204769646_693dcff113_z.jpg"
-            alt="A visitor with a nutmeg grower at Lonthoir, Banda Besar">
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="plan" class="plan">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="tag">Planning</div>
-          <h2>Before you go</h2>
-        </div>
-        <p class="desc">Banda Neira remains secluded and untouched, which defines its timeless charm and rewards
-          thoughtful planning.</p>
-      </div>
 
-      <div class="plan-grid reveal">
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <path d="M2 16l7-2 4-9 2 1-3 8 6-1 2 2-7 3-2 4-2-1 1-4-8-1Z" stroke="currentColor" stroke-width="1.3"
-              stroke-linejoin="round" />
-          </svg>
-          <h4>Getting there</h4>
-          <p>Scheduled flights connect Ambon to Banda Neira several times weekly, and overnight Pelni passenger ferries
-            provide a relaxing sea crossing. Because tropical weather can shift schedules, reserving a flexible travel
-            window is recommended.</p>
-        </div>
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3" />
-            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
-          </svg>
-          <h4>Best time to visit</h4>
-          <p>October through April brings the calmest seas and clearest water for swimming, diving, and snorkelling. The
-            mid-year months still offer rewarding conditions for historical touring and nutmeg plantation walks.</p>
-        </div>
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor"
-              stroke-width="1.3" stroke-linejoin="round" />
-            <path d="M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
-          </svg>
-          <h4>Where to stay</h4>
-          <p>Charming family-run losmen and heritage guesthouses provide memorable hospitality in Neira. Booking ahead
-            is advised during popular dive seasons.</p>
-        </div>
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.3" />
-            <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.3" />
-          </svg>
-          <h4>Getting around</h4>
-          <p>Neira town is entirely walkable. Motorbike hires and chartered wooden outriggers provide scenic transfers
-            to outer islands, Gunung Api, and the nutmeg plantations of Banda Besar.</p>
-        </div>
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2v20M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
-          </svg>
-          <h4>Connectivity</h4>
-          <p>Cellular connectivity is available in Neira town and softens on open waters. Downloading travel maps,
-            guides, and reading materials before arrival is suggested.</p>
-        </div>
-        <div class="plan-card">
-          <svg class="ic" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
-              stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.3" />
-          </svg>
-          <h4>Protect the reefs and heritage</h4>
-          <p>Applying reef-safe mineral sunscreen, avoiding contact with fragile corals, and respecting historic
-            fortress walls ensures these timeless treasures remain preserved for future generations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
   <footer>
     <div class="wrap">
       <div class="foot-grid">
         <div class="foot-brand">
           Banda Neira
-          <p>A curated visual guide to the Banda archipelago in Maluku, Indonesia, renowned for its crystal waters,
-            volcanic landscapes, and historic spice heritage.</p>
+          <p>A beautiful island in Maluku, Indonesia, famous for its stunning natural scenery, clear blue sea, and green
+            hills.</p>
         </div>
         <div class="foot-cols">
           <div class="foot-col">
             <h5>EXPLORE</h5>
             <a href="#about">The Island</a>
-            <a href="#panorama">Panorama</a>
-            <a href="#beaches">Coast and Beaches</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#history">History</a>
-            <a href="#experience">Things to Do</a>
+            <a href="#beach">The Beach</a>
+            <a href="#coast">The Coastline</a>
+            <a href="#volcano">Gunung Api Banda</a>
           </div>
           <div class="foot-col">
-            <h5>PLAN</h5>
-            <a href="#timeline-slider">Chronology Slider</a>
+            <h5>MORE</h5>
+            <a href="#vegetation">Tropical Vegetation</a>
+            <a href="#panorama">The Panorama</a>
             <a href="#map">Interactive Map</a>
-            <a href="#culture">Culture</a>
-            <a href="#plan">Visit Guide</a>
           </div>
           <div class="foot-col">
             <h5>LOCATION</h5>
-            <span>4.525°S, 129.871°E</span>
-            <span>Central Maluku, Indonesia</span>
+            <span>Maluku, Indonesia</span>
             <span>Banda Sea</span>
           </div>
         </div>
@@ -2400,9 +1742,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <script>
-
-
-
     document.querySelectorAll('img').forEach(img => {
       img.addEventListener('error', function handler() {
         this.removeEventListener('error', handler);
@@ -2412,139 +1751,6 @@
       }, { once: true });
     });
 
-
-    const eraData = [
-      {
-        year: "1512",
-        badge: "First European Contact",
-        fill: "18%",
-        span: "16th Century · Portuguese Expedition",
-        title: "Portuguese Navigators Arrive in Search of Nutmeg",
-        desc: "Portuguese explorers led by Afonso de Albuquerque followed spice routes east and became the first Europeans to anchor in Banda Neira, uncovering the ancient secret of nutmeg cultivation.",
-        metrics: [
-          { val: "100%", lbl: "Exclusive Spice Origin" },
-          { val: "1512", lbl: "First European Contact" },
-          { val: "Maluku", lbl: "Maritime Route" }
-        ]
-      },
-      {
-        year: "1609",
-        badge: "Island Sovereignty Defense",
-        fill: "38%",
-        span: "17th Century · Dutch Expansion",
-        title: "Orang Kaya Leaders Resist Coercive Trading Treaties",
-        desc: "Banda Neira's traditional village leaders defended local sovereignty against Dutch monopoly demands, prompting the Dutch East India Company to construct Fort Nassau along the shoreline.",
-        metrics: [
-          { val: "1609", lbl: "Fort Nassau Begun" },
-          { val: "Local", lbl: "Orang Kaya Councils" },
-          { val: "Coastline", lbl: "Defensive Harbor" }
-        ]
-      },
-      {
-        year: "1621",
-        badge: "Colonial Hegemony",
-        fill: "56%",
-        span: "17th Century · Fort Belgica Era",
-        title: "The Dutch VOC Enforces a Complete Spice Monopoly",
-        desc: "Governor-General Jan Pieterszoon Coen imposed absolute colonial control over the Banda archipelago, transforming the islands into fortified plantations centered beneath Fort Belgica.",
-        metrics: [
-          { val: "1621", lbl: "VOC Full Control" },
-          { val: "5-Star", lbl: "Fort Belgica Bastions" },
-          { val: "Global", lbl: "Monopoly Established" }
-        ]
-      },
-      {
-        year: "1667",
-        badge: "Global Diplomacy",
-        fill: "72%",
-        span: "17th Century · Treaty of Breda",
-        title: "The Treaty of Breda Trades Island of Run for Manhattan",
-        desc: "In an extraordinary diplomatic exchange reflecting the enormous value of nutmeg, England ceded the small Banda island of Run to the Dutch in return for New Amsterdam, later named New York.",
-        metrics: [
-          { val: "Breda", lbl: "1667 Historic Treaty" },
-          { val: "Run Island", lbl: "Exchanged for Manhattan" },
-          { val: "Spice Value", lbl: "Higher Than Gold" }
-        ]
-      },
-      {
-        year: "1936",
-        badge: "National Awakening",
-        fill: "88%",
-        span: "20th Century · Independence Era",
-        title: "Indonesian Founding Fathers Exiled in Banda Neira",
-        desc: "Mohammad Hatta and Sutan Sjahrir lived in exile in Banda Neira, educating island youths and drafting foundational ideals for the future independent Republic of Indonesia.",
-        metrics: [
-          { val: "1936", lbl: "Exile of Hatta & Sjahrir" },
-          { val: "Heritage", lbl: "Historical Residences" },
-          { val: "Nation", lbl: "Republic of Indonesia" }
-        ]
-      },
-      {
-        year: "1988",
-        badge: "Ecological Rebirth",
-        fill: "100%",
-        span: "Late 20th Century · Volcanic Renewal",
-        title: "Gunung Api Erupts and Creates Thriving Coral Habitats",
-        desc: "Gunung Api erupted in 1988, sending hardened black basalt into the sea that quickly developed into one of the most biodiverse, pristine coral reef ecosystems in Southeast Asia.",
-        metrics: [
-          { val: "640m", lbl: "Volcano Elevation" },
-          { val: "1988", lbl: "Last Major Eruption" },
-          { val: "World-Class", lbl: "Coral Reef Dive Site" }
-        ]
-      }
-    ];
-
-    const eraRange = document.getElementById('eraRange');
-    const eraTicks = document.querySelectorAll('#sliderTicks .tick');
-    const eraYear = document.getElementById('eraYear');
-    const eraBadge = document.getElementById('eraBadge');
-    const eraFill = document.getElementById('eraFill');
-    const eraSpan = document.getElementById('eraSpan');
-    const eraTitle = document.getElementById('eraTitle');
-    const eraDesc = document.getElementById('eraDesc');
-    const mVal1 = document.getElementById('mVal1');
-    const mLbl1 = document.getElementById('mLbl1');
-    const mVal2 = document.getElementById('mVal2');
-    const mLbl2 = document.getElementById('mLbl2');
-    const mVal3 = document.getElementById('mVal3');
-    const mLbl3 = document.getElementById('mLbl3');
-
-    function updateEra(index) {
-      const data = eraData[index];
-      if (!data) return;
-      if (eraYear) eraYear.textContent = data.year;
-      if (eraBadge) eraBadge.textContent = data.badge;
-      if (eraFill) eraFill.style.width = data.fill;
-      if (eraSpan) eraSpan.textContent = data.span;
-      if (eraTitle) eraTitle.textContent = data.title;
-      if (eraDesc) eraDesc.textContent = data.desc;
-      if (mVal1) mVal1.textContent = data.metrics[0].val;
-      if (mLbl1) mLbl1.textContent = data.metrics[0].lbl;
-      if (mVal2) mVal2.textContent = data.metrics[1].val;
-      if (mLbl2) mLbl2.textContent = data.metrics[1].lbl;
-      if (mVal3) mVal3.textContent = data.metrics[2].val;
-      if (mLbl3) mLbl3.textContent = data.metrics[2].lbl;
-
-      eraTicks.forEach((btn, idx) => {
-        btn.classList.toggle('active', idx === parseInt(index));
-      });
-      if (eraRange) eraRange.value = index;
-    }
-
-    if (eraRange) {
-      eraRange.addEventListener('input', (e) => {
-        updateEra(e.target.value);
-      });
-    }
-
-    eraTicks.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const idx = parseInt(btn.dataset.idx);
-        updateEra(idx);
-      });
-    });
-
-
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -2552,7 +1758,6 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
-
 
     const center = [-4.5253, 129.8974];
     const map = L.map('leafletMap', {
@@ -2636,9 +1841,7 @@
     map.on('focus', () => map.scrollWheelZoom.enable());
     map.on('blur', () => map.scrollWheelZoom.disable());
     document.getElementById('leafletMap').addEventListener('click', () => map.scrollWheelZoom.enable());
-    document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  });
+
   </script>
 </body>
 
